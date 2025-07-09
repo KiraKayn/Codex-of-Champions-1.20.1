@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="ARR"
+
+[[mods]]
+modId="codex_of_champions"
+version="1.0.0"
+displayName="Codex of Champions"
+updateJSONURL="https://github.com/MtheNinja615/Codex-of-Champions"
+displayURL="https://github.com/MtheNinja615/Codex-of-Champions"
+authors="Kayn"
+description='''Spellcasting bosses for the ISS mod with some other stuff.'''
+
+[[dependencies.codex_of_champions]]
+modId="forge"
+type="required"
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.codex_of_champions]]
+modId="minecraft"
+type="required"
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.codex_of_champions]]
+modId="irons_spellbooks"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"
