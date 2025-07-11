@@ -12,6 +12,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = CodexOfChampions.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
@@ -44,7 +45,7 @@ public class Config {
     private static boolean validateItemName(final Object obj) {
         if (!(obj instanceof String str)) return false;
         try {
-            return BuiltInRegistries.ITEM.containsKey(new ResourceLocation(str));
+            return ForgeRegistries.ITEMS.containsKey(new ResourceLocation(str));
         } catch (Exception e) {
             return false;
         }
@@ -57,7 +58,7 @@ public class Config {
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
 
         items = ITEM_STRINGS.get().stream()
-                .map(itemName -> BuiltInRegistries.ITEM.get(new ResourceLocation(itemName)))
+                .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
                 .collect(Collectors.toSet());
     }
 

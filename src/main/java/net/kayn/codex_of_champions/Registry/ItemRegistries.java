@@ -74,13 +74,13 @@ public class ItemRegistries {
     public static final RegistryObject<Item> WITHER_BONE = ITEMS.register("wither_bone",
             () -> new Item(new Item.Properties()));
 
-    public static final Supplier<CurioBaseItem> FLOWERING_PENDANT = ITEMS.register("flowering_pendant", FloweringPendantCurio::new);
-    public static final Supplier<CurioBaseItem> TRUEFIREWARDRING = ITEMS.register("true_fireward_ring", TrueFirewardRingCurio::new);
-    public static final Supplier<CurioBaseItem> VAMPIRICCHARMCURIO = ITEMS.register("vampiric_charm", VampiricCharmCurio::new);
-    public static final Supplier<CurioBaseItem> CHAOSORBCURIO = ITEMS.register("chaos_orb", ChaosOrbCurio::new);
-    public static final Supplier<CurioBaseItem> AzureAnlaceCurio = ITEMS.register("azure_anlace", AzureAnlaceCurio::new);
-    public static final Supplier<CurioBaseItem> ROYALROSECURIO = ITEMS.register("royal_rose", RoyalRoseCurio::new);
-    public static final Supplier<CurioBaseItem> ROYALANLACECURIO = ITEMS.register("royal_anlace", RoyalAnlaceCurio::new);
+//    public static final Supplier<CurioBaseItem> FLOWERING_PENDANT = ITEMS.register("flowering_pendant", FloweringPendantCurio::new);
+//    public static final Supplier<CurioBaseItem> TRUEFIREWARDRING = ITEMS.register("true_fireward_ring", TrueFirewardRingCurio::new);
+//    public static final Supplier<CurioBaseItem> VAMPIRICCHARMCURIO = ITEMS.register("vampiric_charm", VampiricCharmCurio::new);
+//    public static final Supplier<CurioBaseItem> CHAOSORBCURIO = ITEMS.register("chaos_orb", ChaosOrbCurio::new);
+//    public static final Supplier<CurioBaseItem> AzureAnlaceCurio = ITEMS.register("azure_anlace", AzureAnlaceCurio::new);
+//    public static final Supplier<CurioBaseItem> ROYALROSECURIO = ITEMS.register("royal_rose", RoyalRoseCurio::new);
+//    public static final Supplier<CurioBaseItem> ROYALANLACECURIO = ITEMS.register("royal_anlace", RoyalAnlaceCurio::new);
 
     public static final RegistryObject<Item> CRYSTAL_CLAYMORE = ITEMS.register("crystal_claymore", () -> {
         var tier = COCExtendedWeaponTiers.CRYSTAL_CLAYMORE;

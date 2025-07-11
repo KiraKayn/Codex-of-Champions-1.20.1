@@ -16,15 +16,19 @@ public class EffectRegistry {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, CodexOfChampions.MODID);
 
     public static final RegistryObject<MobEffect> PersonaBond = MOB_EFFECTS.register("persona_bond",
-            () -> new PersonaBond(MobEffectCategory.BENEFICIAL, 0x657832)
-                    .addAttributeModifier(Attributes.MOVEMENT_SPEED,
-                            new ResourceLocation(CodexOfChampions.MODID, "persona_bond").toString(), 0.15f,
-                            AttributeModifier.Operation.MULTIPLY_BASE)
-                    .addAttributeModifier(Attributes.ATTACK_DAMAGE,
-                            new ResourceLocation(CodexOfChampions.MODID, "persona_bond").toString(), 0.15f,
-                            AttributeModifier.Operation.MULTIPLY_BASE));
+            () -> new PersonaBond(MobEffectCategory.BENEFICIAL, 0x657832));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
+    }
+
+    public static void commonSetupRegister() {
+        PersonaBond.get()
+                .addAttributeModifier(Attributes.MOVEMENT_SPEED,
+                        new ResourceLocation(CodexOfChampions.MODID, "persona_bond").toString(), 0.15f,
+                        AttributeModifier.Operation.MULTIPLY_BASE)
+                .addAttributeModifier(Attributes.ATTACK_DAMAGE,
+                        new ResourceLocation(CodexOfChampions.MODID, "persona_bond").toString(), 0.15f,
+                        AttributeModifier.Operation.MULTIPLY_BASE);
     }
 }

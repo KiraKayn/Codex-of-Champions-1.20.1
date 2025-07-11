@@ -30,15 +30,15 @@ public class CodexOfChampions {
     public CodexOfChampions(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
-        modEventBus.addListener(this::commonSetup);
+//        modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 //        CreativeModeTabs.register(modEventBus);
-        ItemRegistries.register(modEventBus);
+//        ItemRegistries.register(modEventBus);
         EffectRegistry.register(modEventBus);
         SpellRegistry.register(modEventBus);
-        EntityRegistry.register(modEventBus);
-        modEventBus.addListener(this::addCreative);
+//        EntityRegistry.register(modEventBus);
+//        modEventBus.addListener(this::addCreative);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -49,6 +49,14 @@ public class CodexOfChampions {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
+
+        event.enqueueWork(() -> {
+//            ItemRegistries.commonSetupRegister();
+//            CreativeModeTabs.commonSetupRegister();
+            EffectRegistry.commonSetupRegister();
+//            SpellRegistry.commonSetupRegister();
+//            EntityRegistry.commonSetupRegister();
+        });
 
         if (Config.logDirtBlock)
             LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
