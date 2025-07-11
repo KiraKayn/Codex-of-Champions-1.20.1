@@ -98,7 +98,7 @@ dependencies {
     compileOnly ("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}:api")
     runtimeOnly("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
 
-    runtimeOnly ("software.bernie.geckolib:geckolib-forge-${geckolib_version}")
+    implementation ("software.bernie.geckolib:geckolib-forge-${geckolib_version}")
     runtimeOnly ("top.theillusivec4.caelus:caelus-forge:${caelus_version}")
     implementation ("dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}")
     implementation ("mezz.jei:jei-${mc_version}-forge:${jei_version}")
