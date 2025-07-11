@@ -27,20 +27,20 @@ public class CodexOfChampions {
     public static final String MODID = "codex_of_champions";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public CodexOfChampions() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public CodexOfChampions(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        CreativeModeTabs.register(modEventBus);
+//        CreativeModeTabs.register(modEventBus);
         ItemRegistries.register(modEventBus);
         EffectRegistry.register(modEventBus);
         SpellRegistry.register(modEventBus);
         EntityRegistry.register(modEventBus);
         modEventBus.addListener(this::addCreative);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     public static ResourceLocation id(@NotNull String path) {

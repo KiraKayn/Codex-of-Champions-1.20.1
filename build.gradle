@@ -12,7 +12,7 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(javaVersion as int)
 
-jarJar.enable()
+//jarJar.enable()
 
 minecraft {
     mappings channel: 'official', version: "${mc_version}"
